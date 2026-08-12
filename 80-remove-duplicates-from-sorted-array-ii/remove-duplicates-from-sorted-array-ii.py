@@ -1,15 +1,15 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        start = 2
+        n = len(nums)
 
-        if len(nums) <= 2:
-            return len(nums)
+        if n <= 2:
+            return n
 
-        for i in range(2, len(nums)):
-            if nums[i] != nums[start - 2]:
-                nums[start] = nums[i]
+        start = 1
+        for i in range(2,n):
+            if nums[i] != nums[start-1]:
                 start += 1
-
-        return start
+                nums[start] = nums[i]
+        return start+1
         
         
