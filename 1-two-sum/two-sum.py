@@ -1,12 +1,13 @@
 class Solution(object):
     def twoSum(self, nums, target):
-        d = {}
-
+        add = 0
         for i in range(len(nums)):
-            complement = target - nums[i]
+            for j in range(i+1,len(nums)):
+                add = nums[i] + nums[j]
+                if add == target:
+                    return [i,j]
+                else:
+                    add = 0
 
-            if complement in d:
-                return [d[complement], i]
 
-            d[nums[i]] = i
                 
